@@ -31,9 +31,55 @@
                 font-size:18px;
             }
             
-            
+            #grid
+            {
+                width:min(90vmin, 800px);
+                height:min(90vmin, 800px);
+                margin: 20px auto;
+                display:grid;
+                background:white;
+                border: 1px solid #ccc;
+                cursor: crosshair;
+                user-select:none;
+            }
 
+            .pixel
+            {
+                border: 1px solid #eee;
+                box-sizing: border-box;
+            }
 
+            button
+            {
+                cursor: pointer;
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius:4px;
+                background: white;
+                font-size: 14px;
+            }
+
+            button:hover
+            {
+                background: #eee;
+            }
+
+            button.active
+            {
+                background: #ddd;
+                font-weight: bold;
+            }
+
+            select
+            {
+                padding: 7px 10px;
+                font-size:14px;
+                border:1px solid #ccc;
+                border-radius: 4px;
+            }
         </style>
     </head>
+    <body>
+        
+    </body>
 </html>
