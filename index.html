@@ -142,6 +142,11 @@
                 history.length = 0;
                 saveState();
             }
+            function getPixelAt(clientX, clientY)
+            {
+                const els = document.elementsFromPoint(clientX,clientY);
+                return els.find(el => el.classList.contains('pixel')) || null;
+            }
             
 
         </script>
