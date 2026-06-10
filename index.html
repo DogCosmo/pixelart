@@ -21,7 +21,6 @@
                 flex-wrap: wrap;
                 gap: 10px;
                 align-items:center;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
                 z-index:10;
             }
 
@@ -99,8 +98,16 @@
 
         <div id="grid"></div>
 
-        <script>
-
+        <script> 
+            const grid = document.getElementById('grid');
+            const colorPicker = document.getElementById('colorPicker');
+            let currentColor = '#000000';
+            let size = 32;
+            let drawing = false;
+            let bucketMode = false;
+            let eraserMode = false;
+            const history = [];
+            
         </script>
     </body>
 </html>
