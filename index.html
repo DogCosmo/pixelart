@@ -182,8 +182,27 @@
                     if(y< size - 1) stack.push(cur+size);
                 }
             }
-
             
+            grid.addEventListener('mousedown', e=>
+            {
+                e.preventDefault();
+                drawing=true;
+                const px = getPixelAt(e.clientX, e.clientY);
+                if (px) paint(px);
+            });  
+            
+            grid.addEventListener('mousemove', e=>
+            {
+                if(!drawing || bucketMode) return;
+                const px = getPixelAt(e.clientX,e.clientY);
+                if (px) paint(px);
+            });
+
+            document.addEventListener('mouseup', () =>
+            {
+                if(drawing && !bucketMode) saveState();
+                drawing = false;
+            });
 
 
             
