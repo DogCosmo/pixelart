@@ -120,7 +120,14 @@
             {
                 return getPixels().map(p => p.style.backgroundColor || 'white');
             }
-            // next i need to focus on doing the loadGridData function and createGrid function and getPixelAt function and paint function
+            function loadGridData(data)
+            {
+                getPixels().forEach((p,i) =>
+                {
+                p.style.backgroundColor = data[i] || 'white';
+                });
+            }
+            
         </script>
     </body>
 </html>
