@@ -107,7 +107,20 @@
             let bucketMode = false;
             let eraserMode = false;
             const history = [];
-            
+            function saveState()
+            {
+                history.push(getGridData());
+                if (history.length > 50) history.shift();
+            }
+            function getPixels()
+            {
+                return [...grid.querySelectorAll('.pixel')];
+            }
+            function getGridData()
+            {
+                return getPixels().map(p => p.style.backgroundColor || 'white');
+            }
+            // next i need to focus on doing the loadGridData function and createGrid function and getPixelAt function and paint function
         </script>
     </body>
 </html>
