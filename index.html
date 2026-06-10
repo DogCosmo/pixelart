@@ -130,7 +130,7 @@
             function createGrid(n)
             {
                 size = n;
-                grid.innerHTML = ";
+                grid.innerHTML = ";"
                 grid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
                 grid.style.gridTemplateRows    = `repeat(${n}, 1fr)`;
                 for (let i = 0; i < n * n; i++ )
@@ -162,6 +162,29 @@
                 }
                 pixel.style.backgroundColor = eraserMode ? 'white' : currentColor;
             }
+            
+            function floodFill(start, target, newColor)
+            {
+                if(target == newColor) return;
+                const pixels = getPixels();
+                const stack = [start];
+                while (stack.length)
+                {
+                    const cur = stack.pop();
+                    const px = pixels[cur];
+                    if((px.style.backgroundColor || 'white') != target) continue;
+                    px.style.backgroundColor = newColor;
+                    const x = cur%size;
+                    const y = Math.floor(cur/size);
+                    if(x>0) stack.push(cur-1)
+                    if(x<size-1) stack.push(cur+1)
+                    if(y>0) stack.push(cur-size);
+                    if(y< size - 1) stack.push(cur+size);
+                }
+            }
+
+            
+
 
             
 
