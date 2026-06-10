@@ -147,6 +147,22 @@
                 const els = document.elementsFromPoint(clientX,clientY);
                 return els.find(el => el.classList.contains('pixel')) || null;
             }
+            function paint(pixel)
+            {
+                if(bucketMode)
+                {
+                    const pixels = getPixels();
+                    floodFill(
+                        pixels.indexOf(pixel),
+                        pixel.style.backgroundColor || 'white',
+                        currentColor
+                    );
+                    saveState();
+                    return;
+                }
+                pixel.style.backgroundColor = eraserMode ? 'white' : currentColor;
+            }
+
             
 
         </script>
