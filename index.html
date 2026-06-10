@@ -238,7 +238,7 @@
 
             document.getElementById('eraser').addEventListener('click',function()
             {
-                eraserMode != eraserMode;
+                eraserMode =! eraserMode;
                 bucketMode = false;
                 this.classList.toggle('active', eraserMode);
                 document.getElementById('bucket').classList.remove('active');
@@ -246,7 +246,7 @@
 
             document.getElementById('bucket').addEventListener('click', function()
             {
-                bucketMode != bucketMode
+                bucketMode =! bucketMode
                 eraserMode = false;
                 this.classList.toggle('active', bucketMode);
                 document.getElementById('eraser').classList.remove('active');
