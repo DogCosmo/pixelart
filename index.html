@@ -227,7 +227,41 @@
                 if (drawing && !bucketMode) saveState();
                 drawing = false;
             });
+
+            colorPicker.addEventListener('input', e=>
+            {
+                currentColor = e.target.value;
+                eraserMode = false;
+                document.getElementById('eraser').classList.remove('active');
+
+            });
+
+            document.getElementById('eraser').addEventListener('click',function()
+            {
+                eraserMode != eraserMode;
+                bucketMode = false;
+                this.classList.toggle('active', eraserMode);
+                document.getElementById('bucket').classList.remove('active');
+            });
+
+            document.getElementById('bucket').addEventListener('click', function()
+            {
+                bucketMode != bucketMode
+                eraserMode = false;
+                this.classList.toggle('active', bucketMode);
+                document.getElementById('eraser').classList.remove('active');
+
+            });
+
+            document.getElementById('undo').addEventListener('click', () =>
+            {
+                if (history.length < 2) return;
+                history.pop();
+                loadGridData(history[history.length-1]);
+            });
+
             
+
         </script>
     </body>
 </html>
