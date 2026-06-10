@@ -203,7 +203,15 @@
                 if(drawing && !bucketMode) saveState();
                 drawing = false;
             });
-
+            
+            grid.addEventListener('touchstart', e=>
+            {
+                e.preventDefault();
+                drawing = true;
+                const t = e.touches[0];
+                const px = document.elementFromPoint(t.clientX, t.clientY);
+                if(px && px.classList.contains('pixel')) paint(px);
+            }, { passive: false });
 
             
 
