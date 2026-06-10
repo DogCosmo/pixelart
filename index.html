@@ -212,7 +212,15 @@
                 const px = document.elementFromPoint(t.clientX, t.clientY);
                 if(px && px.classList.contains('pixel')) paint(px);
             }, { passive: false });
-
+            
+            grid.addEventListener('touchmove', e=>
+            {
+                e.preventDefault();
+                if(!drawing || bucketMode) return;
+                const t = e.touches[0];
+                const px = document.elementFromPoint(t.clientX, t.clientY);
+                if(px && px.classList.contains('pixel')) paint(px);
+            }, { passive: false });
             
 
         </script>
