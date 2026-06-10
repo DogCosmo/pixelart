@@ -222,7 +222,12 @@
                 if(px && px.classList.contains('pixel')) paint(px);
             }, { passive: false });
             
-
+            document.addEventListener('touchend', () =>
+            {
+                if (drawing && !bucketMode) saveState();
+                drawing = false;
+            });
+            
         </script>
     </body>
 </html>
