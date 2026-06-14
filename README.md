@@ -1,2 +1,2 @@
 # pixelart
-a pixel art editor where you can draw with pixels
+this is a website called pixel art studio where you can create pixel art! use the toolbar at the top to change the color (and you can pick colors from the color wheel), erase, use the bucket tool, undo, etc. once your artwork is finished you can also export it as a file to download and keep forever using the export button (also at the top on the toolbar). if you need to close the website tab and aren't quite yet done with your artwork yet, feel free to use the save button! when you come back from whatever you were doing and re-open the tab, you can press "load" and your art will reappear just as you left it. 
