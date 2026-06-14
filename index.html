@@ -5,17 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pixel Art Studio</title>
         <style>
+            * {
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                            'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
             body
             {
-                margin : 0;
-                font-family: Times New Roman, serif;
-                background-color: #e3e3e6;
+                margin: 0;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                background-image: url("https://64.media.tumblr.com/3c65fb3574572329557687f47ac11d6c/b6a32286f6e63ed6-12/s1920x1080/106ce206720b723241c316f49c6419572579638e.png");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             .toolbar
             {
                 position: sticky;
                 top:0;
-                background: white;
+                background: rgb(182, 202, 157);
                 padding: 12px;
                 display: flex;
                 flex-wrap: wrap;
@@ -37,7 +44,7 @@
                 margin: 20px auto;
                 display:grid;
                 background:white;
-                border: 1px solid #ccc;
+                border: 1px solid #fefaf5;
                 cursor: crosshair;
                 user-select:none;
             }
@@ -52,7 +59,7 @@
             {
                 cursor: pointer;
                 padding: 8px 12px;
-                border: 1px solid #ccc;
+                border: 1px solid #fefaf5;
                 border-radius:4px;
                 background: white;
                 font-size: 14px;
@@ -65,7 +72,7 @@
 
             button.active
             {
-                background: #ddd;
+                background: #fefaf5;
                 font-weight: bold;
             }
 
@@ -73,7 +80,7 @@
             {
                 padding: 7px 10px;
                 font-size:14px;
-                border:1px solid #ccc;
+                border:1px solid #fefaf5;
                 border-radius: 4px;
             }
         </style>
@@ -130,7 +137,7 @@
             function createGrid(n)
             {
                 size = n;
-                grid.innerHTML = ";"
+                grid.innerHTML = " "
                 grid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
                 grid.style.gridTemplateRows    = `repeat(${n}, 1fr)`;
                 for (let i = 0; i < n * n; i++ )
